@@ -1,0 +1,619 @@
+<!-- 计算界面 -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="可视化一件衣服的碳排放" />
+    <meta name="keywords" content="衣碳究竟" />
+    <!-- 网页logo -->
+    <link rel="icon" href="Images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="./CSS/base.css" />
+    <link rel="stylesheet" href="./CSS/common.css" />
+    <link rel="stylesheet" href="./CSS/Calculator.css" />
+    <link rel="stylesheet" href="./CSS/Animate.css" />
+    <script src="./JS/jquery-3.6.0.min.js"></script>
+
+  </head>
+  <body>
+    <!--顶部-->
+    <div class="navbar">
+      <div class="left" >
+        <ul>
+          <a href="#">衣碳究竟</a>
+        </ul >
+      </div>
+      <!-- <div class="right" ></div> -->
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-3" id="topsdiv">
+            <div class="row">
+              <label for="tops"><h1><a href="#top1">上装：</a></h1></label>
+            </div>  
+          <div class="row">
+            <select id="tops" >
+              <option value="0" selected>无</option>
+              <option value="1" >亚麻polo衫</option>
+              <option value="2">纯棉polo衫</option>
+              <option value="3">纯棉T恤</option>
+              <option value="4">丝光棉T恤</option>
+              <option value="5">纯棉衬衫</option>
+              <option value="6">涤棉衬衫</option>
+              <option value="7">化纤衬衫</option>
+              <option value="8">亚麻衬衫</option>
+              <option value="9">纯棉卫衣</option>
+              <option value="10">丝质卫衣</option>
+              <option value="11">涤棉卫衣</option>
+              <option value="12">毛料卫衣</option>
+              <option value="13">毛纺织毛衣</option>
+            </select>
+          </div>
+        </div>
+          <div class="col-md-3" id="bottomsdiv">
+            <div class="row">
+              <label for="bottoms"><h1><a href="#unders">下装：</a></h1></label>
+            </div>
+            <div class="row">
+              <select id="bottoms">
+                <option value="0" selected>无</option>
+                <option value="1">棉质西裤</option>
+                <option value="2">羊毛西裤</option>
+                <option value="3">棉质打底裤</option>
+                <option value="4">羊毛打底裤</option>
+                <option value="5">涤纶打底裤</option>
+                <option value="6">牛仔长裤</option>
+                <option value="7">纯棉运动长裤</option>
+                <option value="8">尼龙运动长裤</option>
+                <option value="9">涤纶运动长裤</option>
+                <option value="10">纯棉短裤</option>
+                <option value="11">涤纶短裤</option>
+                <option value="12">牛仔短裤</option>
+                <option value="13">棉质短裙</option>
+                <option value="14">牛仔布短裙</option>
+                <option value="15">丝绸短裙</option>
+                <option value="16">麻布短裙</option>
+                <option value="17">纯棉半身裙</option>
+                <option value="18">丝绸半身裙</option>
+                <option value="19">羊毛半身裙</option>
+                <option value="20">涤纶半身裙</option>
+                <option value="21">丝绸吊带裙</option>
+                <option value="22">棉质吊带裙</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-3" id="outerweardiv">
+            <div class="row">
+              <label for="outerwears"><h1><a href="#overcoat">外套：</a></h1></label>
+            </div>
+            <div class="row">
+              <select id="outerwears">
+                <option value="0" selected>无</option>
+                <option value="1">纯棉夹克</option>
+                <option value="2">涤棉夹克</option>
+                <option value="3">毛料夹克</option>
+                <option value="4">皮革夹克</option>
+                <option value="5">羊毛夹克</option>
+                <option value="6">羊毛西装外套</option>
+                <option value="7">亚麻西装外套</option>
+                <option value="8">纯棉西装外套</option>
+                <option value="9">涤棉西装外套</option>
+                <option value="10">标准羽绒服</option>
+                <option value="11">轻薄羽绒服</option>
+                <option value="12">涤纶运动外套</option>
+                <option value="13">尼龙运动外套</option>
+                <option value="14">白色棉服</option>
+                <option value="15">彩色棉服</option>
+                <option value="16">化纤风衣</option>
+                <option value="17">纯棉卫衣外套</option>
+                <option value="18">羊毛卫衣外套</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-3" id="dressdiv">
+            <div class="row">
+              <label for="dresses"><h1><a href="#dress">连衣裙：</a></h1></label>
+            </div>
+            <div class="row">
+              <select id="dresses">
+                <option value="0" selected>无</option>
+                <option value="1">丝绸长裙</option>
+                <option value="2">棉质长裙</option>
+                <option value="3">涤纶长裙</option>
+              </select>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="chara">
+          <img id="character" src="Animate/female.png" alt="Character">
+          <div class="clothes-tops">
+              <img src="Animate/transparent.png" alt="">
+          </div>
+          <div class="clothes-bottoms">
+              <img src="Animate/transparent.png" alt="">
+          </div>
+          <div class="clothes-outerwears">
+              <img src="Animate/transparent.png" alt="">
+          </div>
+          <div class="clothes-dresses">
+              <img src="Animate/transparent.png" alt="">
+          </div>    
+      </div>
+      <button id="gender-btn">我是男生！</button> 
+    </div>
+    
+      
+      <div class="fixed-calculator">
+        <ul>请选择运输的出发地与目的地</ul>
+          <label for="departure">选择出发地:</label>
+          <select id="departure">
+          <!-- 下拉列表的选项 -->
+            <option value="0">北京</option>
+            <option value="1">天津</option>
+            <option value="2">河北</option>
+            <option value="3">山西</option>
+            <option value="4">内蒙古</option>
+            <option value="5">辽宁</option>
+            <option value="6">吉林</option>
+            <option value="7">黑龙江</option>
+            <option value="8">上海</option>
+            <option value="9">江苏</option>
+            <option value="10">浙江</option>
+            <option value="11">安徽</option>
+            <option value="12">福建</option>
+            <option value="13">江西</option>
+            <option value="14">山东</option>
+            <option value="15">河南</option>
+            <option value="16">湖北</option>
+            <option value="17">湖南</option>
+            <option value="18">广东</option>
+            <option value="19">广西</option>
+            <option value="20">海南</option>
+            <option value="21">重庆</option>
+            <option value="22">四川</option>
+            <option value="23">贵州</option>
+            <option value="24">云南</option>
+            <option value="25">西藏</option>
+            <option value="26">陕西</option>
+            <option value="27">甘肃</option>
+            <option value="28">青海</option>
+            <option value="29">宁夏</option>
+            <option value="30">新疆 </option>
+          </select>
+          </select>
+          <br>
+          <!-- 目的地下拉选项 -->
+          <label for="destination">选择目的地:</label>
+          <select id="destination">
+          <!-- 下拉列表的选项 -->
+          <option value="0">北京</option>
+            <option value="1">天津</option>
+            <option value="2">河北</option>
+            <option value="3">山西</option>
+            <option value="4">内蒙古</option>
+            <option value="5">辽宁</option>
+            <option value="6">吉林</option>
+            <option value="7">黑龙江</option>
+            <option value="8">上海</option>
+            <option value="9">江苏</option>
+            <option value="10">浙江</option>
+            <option value="11">安徽</option>
+            <option value="12">福建</option>
+            <option value="13">江西</option>
+            <option value="14">山东</option>
+            <option value="15">河南</option>
+            <option value="16">湖北</option>
+            <option value="17">湖南</option>
+            <option value="18">广东</option>
+            <option value="19">广西</option>
+            <option value="20">海南</option>
+            <option value="21">重庆</option>
+            <option value="22">四川</option>
+            <option value="23">贵州</option>
+            <option value="24">云南</option>
+            <option value="25">西藏</option>
+            <option value="26">陕西</option>
+            <option value="27">甘肃</option>
+            <option value="28">青海</option>
+            <option value="29">宁夏</option>
+            <option value="30">新疆 </option>
+          </select>
+          <br>
+          <button type="submit" onclick="submit()">
+            计算
+          </button>
+        </div>
+      <div>
+    <div>
+    <!--上衣-->
+    <div class="tops left" id="top1">
+      <div class="hd">
+        <h1>上装：</h1>
+      </div>
+      <div class="bd clearfix">
+        <ul>
+          <li>
+            <img src="Images/tops/polo-yama.png" alt="">
+            <div class="label">
+              polo衫<br>（亚麻）
+            </div>
+          </li>
+          <li>
+            <img src="Images/tops/polo-mian.png" alt="">
+            <div class="label">
+              polo衫<br>（纯棉）
+            </div>
+          </li>
+          <li>
+            <img src="Images/tops/shirt-mian.png" alt="">
+            <div class="label">
+              衬衫<br>（纯棉）
+            </div>
+          </li>
+          <li>
+            <img src="Images/tops/shirt-dimian.png" alt="">
+            <div class="label">
+              衬衫<br>（涤棉）
+            </div>
+          </li>
+          <li>
+            <img src="Images/tops/shirt-huaxian.png" alt="">
+            <div class="label">
+              衬衫<br>（化纤）
+            </div>
+          </li>
+          <li>
+            <img src="Images/tops/shirt-yama.png" alt="">
+            <div class="label">
+              衬衫<br>（亚麻）
+            </div>
+          </li>
+          <li>
+            <img src="Images/tops/wool.png" alt="">
+            <div class="label">
+              毛衣<br>（纺织）
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <img src="Images/tops/T-mian.png" alt="">
+            <div class="label">
+              T恤<br>（纯棉）
+            </div>
+          </li>
+          <li>
+            <img src="Images/tops/T-simian.png" alt="">
+            <div class="label">
+              T恤<br>（丝绵）
+            </div>
+          </li>
+          <li>
+            <img src="Images/tops/weiyi-mian.png" alt="">
+            <div class="label">
+              卫衣<br>（纯棉）
+            </div>
+          </li>
+          <li>
+            <img src="Images/tops/weiyi-si.png" alt="">
+            <div class="label">
+              卫衣<br>（丝质）
+            </div>
+          </li>
+          <li>
+            <img src="Images/tops/weiyi-dimian.png" alt="">
+            <div class="label">
+              卫衣<br>（涤棉）
+            </div>
+          </li>
+          <li>
+            <img src="Images/tops/weiyi-mao.png" alt="">
+            <div class="label">
+              卫衣<br>（毛料）
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--下装-->
+    <div class="unders left" id="unders">
+      <div class="hd">
+        <h2>下装</h2>
+      </div>
+      <div class="bd">
+        <ul>
+          <li>
+            <img src="Images/unders/xiku-mian.png" alt="">
+            <div class="label">
+              西裤<br>（棉质）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/xiku-wool.png" alt="">
+            <div class="label">
+              西裤<br>（羊毛）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/dadi-mian.png" alt="">
+            <div class="label">
+              打底裤<br>（棉质）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/dadi-wool.png" alt="">
+            <div class="label">
+              打底裤<br>（羊毛）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/dadi-dilun.png" alt="">
+            <div class="label">
+              打底裤<br>（涤纶）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/jeans.png" alt="">
+            <div class="label">
+              牛仔长裤<br>（牛仔）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/sport-mian.png" alt="">
+            <div class="label">
+              运动长裤<br>（纯棉）
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <img src="Images/unders/sport-nilong.png" alt="">
+            <div class="label">
+              运动长裤<br>（尼龙）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/sport-dilun.png" alt="">
+            <div class="label">
+              运动长裤<br>（涤纶）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/short-mian.png" alt="">
+            <div class="label">
+              短裤<br>（纯棉）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/short-dilun.png" alt="">
+            <div class="label">
+              短裤<br>（涤纶）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/short-jeans.png" alt="">
+            <div class="label">
+              短裤<br>（牛仔）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/skirt-mian.png" alt="">
+            <div class="label">
+              半身裙<br>（纯棉）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/skirt-si.png" alt="">
+            <div class="label">
+              半身裙<br>（丝绸）
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <img src="Images/unders/skirt-wool.png" alt="">
+            <div class="label">
+              半身裙<br>（羊毛）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/skirt-dilun.png" alt="">
+            <div class="label">
+              半身裙<br>（涤纶）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/吊带裙-丝质.png" alt="">
+            <div class="label">
+              吊带裙<br>（丝绸）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/吊带裙-棉质.png" alt="">
+            <div class="label">
+              吊带裙<br>（棉质）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/短裙-棉质.png" alt="">
+            <div class="label">
+              短裙<br>（棉质）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/短裙-牛仔.png" alt="">
+            <div class="label">
+              短裙<br>（牛仔）
+            </div>
+          </li>
+          <li>
+            <img src="Images/unders/短裙-丝质.png" alt="">
+            <div class="label">
+              短裙<br>（丝绸）
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <img src="Images/unders/短裙-麻布.png" alt="">
+            <div class="label">
+              短裙<br>（麻布）
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--外套-->
+    <div class="overcoat left" id="overcoat">
+      <div class="hd">
+        <h2>外套</h2>
+      </div>
+      <div class="bd">
+        <ul>
+          <li>
+            <img src="Images/overcoat/纯棉夹克.png" alt="">
+            <div class="label">
+              夹克<br>（纯棉）
+            </div>
+          </li>
+          <li>
+            <img src="Images/overcoat/涤棉夹克.png" alt="">
+            <div class="label">
+              夹克<br>（涤棉）
+            </div>
+          </li>
+          <li>
+            <img src="Images/overcoat/毛料夹克.png" alt="">
+            <div class="label">
+              夹克<br>（毛料）
+            </div>
+          </li>
+          <li>
+            <img src="Images/overcoat/皮革夹克.png" alt="">
+            <div class="label">
+              夹克<br>（皮革）
+            </div>
+          </li>
+          <li>
+            <img src="Images/overcoat/牛仔夹克.png" alt="">
+            <div class="label">
+              夹克<br>（牛仔）
+            </div>
+          </li>
+          <li>
+            <img src="Images/overcoat/涤纶运动外套.png" alt="">
+            <div class="label">
+              运动外套<br>（涤纶）
+            </div>
+          </li>
+          <li>
+            <img src="Images/overcoat/尼龙运动外套.png" alt="">
+            <div class="label">
+              运动外套<br>（尼龙）
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <img src="Images/overcoat/羊毛西装外套.png" alt="">
+            <div class="label">
+              西装外套<br>（羊毛）
+            </div>
+          </li>
+          <li>
+            <img src="Images/overcoat/亚麻西装外套.png" alt="">
+            <div class="label">
+              西装外套<br>（亚麻）
+            </div>
+          </li>
+          <li>
+            <img src="Images/overcoat/纯棉西装外套.png" alt="">
+            <div class="label">
+              西装外套<br>（纯棉）
+            </div>
+          </li>
+          <li>
+            <img src="Images/overcoat/涤棉西装外套.png" alt="">
+            <div class="label">
+              西装外套<br>（涤棉）
+            </div>
+          </li>
+          <li>
+            <img src="Images/overcoat/风衣.png" alt="">
+            <div class="label">
+              风衣<br>（化纤）
+            </div>
+          </li>
+          <li>
+            <img src="Images/overcoat/白色棉服.png" alt="">
+            <div class="label">
+              棉服<br>（白色）
+            </div>
+          </li>
+          <li>
+            <img src="Images/overcoat/彩色棉服.png" alt="">
+            <div class="label">
+              棉服<br>（彩色）
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <img src="Images/overcoat/羽绒服.png" alt="">
+            <div class="label">
+              羽绒服<br>（标准）
+            </div>
+          </li>
+          <li>
+            <img src="Images/overcoat/纯棉卫衣.png" alt="">
+            <div class="label">
+              卫衣外套<br>（纯棉）
+            </div>
+          </li>
+          <li>
+            <img src="Images/overcoat/羊毛卫衣.png" alt="">
+            <div class="label">
+              卫衣外套<br>（羊毛）
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--连衣裙-->
+    <div class="dress left" id="dress">
+      <div class="hd">
+        <h2>连衣裙</h2>
+      </div>
+      <div class="bd">
+        <ul>
+          <li>
+            <img src="Images/dress/dress-si.png" alt="">
+            <div class="label">
+              长裙<br>（丝绸）
+            </div>
+          </li>
+          <li>
+            <img src="Images/dress/dress-mian.png" alt="">
+            <div class="label">
+              长裙<br>（纯棉）
+            </div>
+          </li>
+          <li>
+            <img src="Images/dress/dress-dilun.png" alt="">
+            <div class="label">
+              长裙<br>（涤纶）
+            </div>
+          </li>
+        </ul>
+      </div>
+    <script src="JS/jquery-3.7.1.js" defer></script>
+    <script src="JS/Calculator.js" defer ></script>
+    <script src="JS/index.js"></script>
+  </body>
+</html>

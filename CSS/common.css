@@ -1,0 +1,83 @@
+/* 左侧部分 */
+.left {
+    width : 830px;
+    margin-left: 150px;
+    float: left;
+}
+
+/* 右侧部分 */
+.right {
+    width : 300px;
+    margin-right : 200 px;
+    float: right;
+}
+
+/* 顶部 */
+.navbar{
+    height :52px;
+    background-color: green;
+}
+
+.navbar .left{
+    height :52px;
+}
+
+.navbar .right {
+    height :52px;
+}
+
+.navbar .left ul{
+    line-height: 52px;
+}
+
+.navbar .left  a{
+    padding :16px;
+    font-size: 38px;
+    color: #fff;
+    font-family: 方正粗黑宋简体;
+}
+
+/* 衣服文字栏 */
+.tops .hd,
+.unders .hd,
+.overcoat .hd,
+.dress .hd
+{
+    line-height: 80px;
+    margin:10px 20px 0;
+}
+
+.tops .bd li,
+.unders .bd li,
+.overcoat .bd li,
+.dress .bd li
+{
+    float: left;
+    width: 100px;
+    height: 150px;
+    margin: 0 10px 5px;
+}
+
+.tops .bd li:last-child,
+.unders .bd li:last-child,
+.overcoat .bd li:last-child,
+.dress .bd li:last-child
+{
+    margin-right: 0;
+}
+
+.tops .bd li img,
+.unders .bd li img,
+.overcoat .bd li img,
+.dress .bd li img
+{
+    width: 100px;
+}
+
+.label
+{
+    margin: 5px 15px;
+    text-align: center; 
+    line-height: 20px;
+}
+
